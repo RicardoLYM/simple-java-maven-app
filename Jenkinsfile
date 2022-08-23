@@ -9,6 +9,8 @@ pipeline {
                 }
             }
             steps {
+                sh 'docker rmi my-app:latest'
+                echo 'rm image successfully'
                 sh 'mvn -B -DskipTests clean package dockerfile:build'
             }
         }
